@@ -1,6 +1,6 @@
 require "cf/explorer/version"
 
-module Cf
+module CF
   module Explorer
     # Your code goes here...
   end
