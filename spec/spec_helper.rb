@@ -1,5 +1,5 @@
 require 'pry'
-require 'cf/datamodel'
+require 'cf/explorer'
 
 RSpec.configure do |config|
 
