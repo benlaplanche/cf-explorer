@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "cf-explorer"
   spec.version       = CF::Explorer::VERSION
   spec.authors       = ["Ben Laplanche"]
-  spec.email         = ["blaplanche@pivotal.io"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.email         = ["ben@laplanche.co.uk"]
+  spec.summary       = %q{Explore the Cloud Foundry Data Model}
+  spec.description   = %q{Ruby Gem to explore the Cloud Foundry Data Model, for the authenticated UAA user}
   spec.homepage      = ""
   spec.license       = "MIT"
 
