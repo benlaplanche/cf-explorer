@@ -8,10 +8,10 @@ describe "Cloud Foundry Explorer" do
 
 	context "creating a client" do
 		let(:client) { CF::Explorer::Client.new(
-			uaa_url: 	ENV['CF_UAA'],
-			api_url: 	ENV['CF_API'],
-			user: 		ENV['CF_USER'],
-			password: ENV['CF_PASSWORD'],
+			uaa_url: 	ENV["CF_UAA"],
+			api_url: 	ENV["CF_API"],
+			user: 		ENV["CF_USER"],
+			password: ENV["CF_PASSWORD"],
 			options: {
 				skip_ssl_validation: true
 			})

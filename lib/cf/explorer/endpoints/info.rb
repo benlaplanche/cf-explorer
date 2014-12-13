@@ -9,7 +9,9 @@ module CF
         end
 
         def get
-          data = client.get('/info', auth: false).status
+          data = client.get('/info', auth: false)
+
+          CF::Explorer::Resources::Info.new(data)
         end
       end
     end

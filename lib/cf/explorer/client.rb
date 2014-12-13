@@ -10,10 +10,12 @@ module CF
         @api_url 							= options.fetch(:api_url)
         @options							= options.fetch(:options)
         @skip_ssl_validation 	= options.fetch(:options).fetch(:skip_ssl_validation)
+        connection_options    = options.fetch(:connection_options, { ssl: {verify: false} })
+        #TODO: strip the leading http/https properly
         @host                 = @api_url[8..-1]
         @access_token = token
 
-        @connection = Faraday.new(url: api_url, :ssl => {:verify => false}) do |faraday|
+        @connection = Faraday.new({url: api_url}.merge(connection_options)) do |faraday|
           faraday.request   :url_encoded
           faraday.response  :logger
           faraday.adapter   Faraday.default_adapter

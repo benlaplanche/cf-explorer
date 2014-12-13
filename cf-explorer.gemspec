@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "cf-uaa-lib"
   spec.add_runtime_dependency "cf-uaac"
   spec.add_runtime_dependency "faraday"
+  spec.add_runtime_dependency "virtus"
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
