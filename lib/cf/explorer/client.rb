@@ -13,7 +13,7 @@ module CF
         connection_options    = options.fetch(:connection_options, { ssl: {verify: false} })
         #TODO: strip the leading http/https properly
         @host                 = @api_url[8..-1]
-        @access_token = token
+        # @access_token ||= token
 
         @connection = Faraday.new({url: api_url}.merge(connection_options)) do |faraday|
           faraday.request   :url_encoded

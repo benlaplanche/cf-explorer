@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.crystal.pepsi.cf-app.com/v2/info
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Cookie:
+      - ''
+      Host:
+      - api.crystal.pepsi.cf-app.com
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '350'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 13 Dec 2014 17:02:32 GMT
+      Keep-Alive:
+      - timeout=20
+      Server:
+      - nginx
+      X-Cf-Requestid:
+      - 56e3714d-f64b-4e8d-573e-5240f4aa2d93
+      X-Content-Type-Options:
+      - nosniff
+      X-Vcap-Request-Id:
+      - e0f53eb4-69c1-4a37-593e-f12e3267f7ca::0b67b905-8181-4dbd-bedc-f9d4a9220786
+    body:
+      encoding: UTF-8
+      string: '{"name":"vcap","build":"2222","support":"http://support.cloudfoundry.com","version":2,"description":"Cloud
+        Foundry sponsored by Pivotal","authorization_endpoint":"https://login.crystal.pepsi.cf-app.com","token_endpoint":"https://uaa.crystal.pepsi.cf-app.com","api_version":"2.13.0","logging_endpoint":"wss://loggregator.crystal.pepsi.cf-app.com:443"}'
+    http_version: 
+  recorded_at: Sat, 13 Dec 2014 17:02:31 GMT
+recorded_with: VCR 2.9.3
