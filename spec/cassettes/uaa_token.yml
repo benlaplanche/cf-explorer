@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://uaa.crystal.pepsi.cf-app.com/oauth/authorize?client_id=cf&redirect_uri=https://uaa.cloudfoundry.com/redirect/cf&response_type=token&state=ebadb789a9c9f84735533c8b968a64d8
+    body:
+      encoding: US-ASCII
+      string: username=me&password=goose1bingo&source=credentials
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json;charset=utf-8
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=utf-8
+      Content-Length:
+      - 51
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Cache-Control:
+      - no-cache
+      - no-store
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 15 Dec 2014 16:45:04 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Location:
+      - https://uaa.cloudfoundry.com/redirect/cf#access_token=eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJhZGNkOGE0OC0yNWMwLTQ2NDgtYjQwMC0yN2Q3ZTdiOTY0NzYiLCJzdWIiOiIzMjdjYTgxMC0zYWIxLTQzZTEtYmEzNC1jYzcyYTJjYWRjN2UiLCJzY29wZSI6WyJwYXNzd29yZC53cml0ZSIsIm9wZW5pZCIsImNsb3VkX2NvbnRyb2xsZXIud3JpdGUiLCJjbG91ZF9jb250cm9sbGVyLnJlYWQiXSwiY2xpZW50X2lkIjoiY2YiLCJjaWQiOiJjZiIsInVzZXJfaWQiOiIzMjdjYTgxMC0zYWIxLTQzZTEtYmEzNC1jYzcyYTJjYWRjN2UiLCJ1c2VyX25hbWUiOiJtZSIsImVtYWlsIjoibWUiLCJpYXQiOjE0MTg2NjE5MDQsImV4cCI6MTQxODcwNTEwNCwiaXNzIjoiaHR0cHM6Ly91YWEuY3J5c3RhbC5wZXBzaS5jZi1hcHAuY29tL29hdXRoL3Rva2VuIiwiYXVkIjpbIm9wZW5pZCIsImNsb3VkX2NvbnRyb2xsZXIiLCJwYXNzd29yZCJdfQ.jjU5v_PlDOMcKJ5nTwQPyVvKNhB2bb0hPDgrZbmiZoeoNwJcGg__xxiQBZagJmeDtnzLyPRgf2ioaMMeSS7umJftoCPEbIlOIpINJRLm_3dbJpYy87EJNcevvcsB1CN44enTXyDkxChlpVH3zRYpDjcbQH0D0JKSqidfXY1I_BrnBxb_2DT3_lZKPtkDk3PYRX7gwwRouEd8z-XB-uPSSQvSEJ_xjHQTQpT5K_xeILDeV9gpZ_Qiw0XTlfLPwK8D1Y_q_rveNM9nvI39yKqgVNB3wzPpkqdZVSWrWM94UYiJohuD8aAvbHebjjEr6SVDSrY2yGZ_Lm2YxgFZltDBHQ&token_type=bearer&state=ebadb789a9c9f84735533c8b968a64d8&expires_in=43199&scope=password.write%20openid%20cloud_controller.write%20cloud_controller.read&jti=adcd8a48-25c0-4648-b400-27d7e7b96476
+      Pragma:
+      - no-cache
+      Server:
+      - Apache-Coyote/1.1
+      X-Cf-Requestid:
+      - df6bbed0-e7fa-494e-7f61-0bbe40f3ba2f
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 15 Dec 2014 16:45:04 GMT
+- request:
+    method: post
+    uri: https://uaa.crystal.pepsi.cf-app.com/oauth/authorize?client_id=cf&redirect_uri=https://uaa.cloudfoundry.com/redirect/cf&response_type=token&state=a21a2d37637f9e1773610b40fef1491d
+    body:
+      encoding: US-ASCII
+      string: username=me&password=goose1bingo&source=credentials
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json;charset=utf-8
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=utf-8
+      Content-Length:
+      - 51
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Cache-Control:
+      - no-cache
+      - no-store
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 15 Dec 2014 16:45:04 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Location:
+      - https://uaa.cloudfoundry.com/redirect/cf#access_token=eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJjNjQ3YzMzZS1hYmI2LTRmYzItOWE5Yi0zMWFkOWNiODUxODkiLCJzdWIiOiIzMjdjYTgxMC0zYWIxLTQzZTEtYmEzNC1jYzcyYTJjYWRjN2UiLCJzY29wZSI6WyJwYXNzd29yZC53cml0ZSIsIm9wZW5pZCIsImNsb3VkX2NvbnRyb2xsZXIud3JpdGUiLCJjbG91ZF9jb250cm9sbGVyLnJlYWQiXSwiY2xpZW50X2lkIjoiY2YiLCJjaWQiOiJjZiIsInVzZXJfaWQiOiIzMjdjYTgxMC0zYWIxLTQzZTEtYmEzNC1jYzcyYTJjYWRjN2UiLCJ1c2VyX25hbWUiOiJtZSIsImVtYWlsIjoibWUiLCJpYXQiOjE0MTg2NjE5MDQsImV4cCI6MTQxODcwNTEwNCwiaXNzIjoiaHR0cHM6Ly91YWEuY3J5c3RhbC5wZXBzaS5jZi1hcHAuY29tL29hdXRoL3Rva2VuIiwiYXVkIjpbIm9wZW5pZCIsImNsb3VkX2NvbnRyb2xsZXIiLCJwYXNzd29yZCJdfQ.PxOhSGNJyAuu3vpKb4wjcKvBj3kGElY5IgbqTLjtcwyLtU1DpUxBspDTe43ukIJ5EXrcVgRGe-P6TUDJiC-p9qJEbru-I4TQL34xkjGwkRmj3fGoX2STkxP2zk6BA8xfA6vynE3Wu-kpWVlDFethJawQ5CKwH0E_Eg6RXEU6HURjg8gkNm_8ow4-XGC-d6O5gm_CthGSvF6WzqeRRDKvkdatniFA-N_1FJ2iYA60zXLa3APCIZ_4rUacIQExXRIEwvEifgjcToA4kPdX94CultS8nAwYKtknU-LkQNVfkqJFr5rMmeJGp4-CwQLgFX-3ShXWlz5T-3Xd4_ueVt3AzQ&token_type=bearer&state=a21a2d37637f9e1773610b40fef1491d&expires_in=43199&scope=password.write%20openid%20cloud_controller.write%20cloud_controller.read&jti=c647c33e-abb6-4fc2-9a9b-31ad9cb85189
+      Pragma:
+      - no-cache
+      Server:
+      - Apache-Coyote/1.1
+      X-Cf-Requestid:
+      - 5115bd93-e80d-4a2d-500a-bce2cc4db230
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 15 Dec 2014 16:45:05 GMT
+recorded_with: VCR 2.8.0

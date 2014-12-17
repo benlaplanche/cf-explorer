@@ -2,6 +2,7 @@ require 'pry'
 require 'cf/explorer'
 require 'vcr'
 require 'webmock/rspec'
+require './spec/shared_things'
 
 VCR.configure do |c|
   c.cassette_library_dir  = "spec/cassettes"
@@ -12,12 +13,5 @@ VCR.configure do |c|
 end
 
 RSpec.configure do |config|
-  @client =  CF::Explorer::Client.new(
-      uaa_url: 	ENV["CF_UAA"],
-      api_url: 	ENV["CF_API"],
-      user: 		ENV["CF_USER"],
-      password: ENV["CF_PASSWORD"],
-      options: {
-          skip_ssl_validation: true
-      })
+
 end

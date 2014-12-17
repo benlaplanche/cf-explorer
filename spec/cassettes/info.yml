@@ -1,6 +1,54 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: https://uaa.crystal.pepsi.cf-app.com/oauth/authorize?client_id=cf&redirect_uri=https://uaa.cloudfoundry.com/redirect/cf&response_type=token&state=9825a46fe41717ab358a0c1a400596e8
+    body:
+      encoding: US-ASCII
+      string: username=me&password=goose1bingo&source=credentials
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json;charset=utf-8
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=utf-8
+      Content-Length:
+      - 51
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Cache-Control:
+      - no-cache
+      - no-store
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 15 Dec 2014 16:45:05 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Location:
+      - https://uaa.cloudfoundry.com/redirect/cf#access_token=eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJiNWRkMDIzYi0zNmJhLTQ1ZmUtYTgyNy00NzZlM2VkZTRlMGQiLCJzdWIiOiIzMjdjYTgxMC0zYWIxLTQzZTEtYmEzNC1jYzcyYTJjYWRjN2UiLCJzY29wZSI6WyJwYXNzd29yZC53cml0ZSIsIm9wZW5pZCIsImNsb3VkX2NvbnRyb2xsZXIud3JpdGUiLCJjbG91ZF9jb250cm9sbGVyLnJlYWQiXSwiY2xpZW50X2lkIjoiY2YiLCJjaWQiOiJjZiIsInVzZXJfaWQiOiIzMjdjYTgxMC0zYWIxLTQzZTEtYmEzNC1jYzcyYTJjYWRjN2UiLCJ1c2VyX25hbWUiOiJtZSIsImVtYWlsIjoibWUiLCJpYXQiOjE0MTg2NjE5MDUsImV4cCI6MTQxODcwNTEwNSwiaXNzIjoiaHR0cHM6Ly91YWEuY3J5c3RhbC5wZXBzaS5jZi1hcHAuY29tL29hdXRoL3Rva2VuIiwiYXVkIjpbIm9wZW5pZCIsImNsb3VkX2NvbnRyb2xsZXIiLCJwYXNzd29yZCJdfQ.iDzTi3p0fdSAPMxcH5nWu_ynQBIxE5ue6CH8xeYtLegXSOmpYywbrgJ8mHEGAcIkHWWq9WCeCWRPUcuzSi2I4oYFCRmC9c63Nn8Nt-VJfImBVmyfSqyKILXUXF8wuOTJfPv20r0pa4_mSWM5dYVPcXrHwVJCS5DzXA3O5Y6A2dG3N4tCm-IBOFtzj4D_81qk0rgaxGLZ7Nw4P4SxiT8s9Ax3eeJwRAqdskJXXXEWkUpoy-DGtnwbFJUUppYXk_OXiAR3AKoxgftRxqndPJkhZBR5ktifACIHJaOgnNcYMYfw-cOVIn3Y_3AUw8oMZySMpSfAroQAPCGKMiCw-9ZpIA&token_type=bearer&state=9825a46fe41717ab358a0c1a400596e8&expires_in=43199&scope=password.write%20openid%20cloud_controller.write%20cloud_controller.read&jti=b5dd023b-36ba-45fe-a827-476e3ede4e0d
+      Pragma:
+      - no-cache
+      Server:
+      - Apache-Coyote/1.1
+      X-Cf-Requestid:
+      - ff2a8850-d3ad-496a-552d-f6acf8860e76
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 15 Dec 2014 16:45:05 GMT
+- request:
     method: get
     uri: https://api.crystal.pepsi.cf-app.com/v2/info
     body:
@@ -27,21 +75,21 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 13 Dec 2014 17:02:32 GMT
+      - Mon, 15 Dec 2014 16:45:03 GMT
       Keep-Alive:
       - timeout=20
       Server:
       - nginx
       X-Cf-Requestid:
-      - 56e3714d-f64b-4e8d-573e-5240f4aa2d93
+      - 380ec32a-e649-4704-54a7-5e812839c8de
       X-Content-Type-Options:
       - nosniff
       X-Vcap-Request-Id:
-      - e0f53eb4-69c1-4a37-593e-f12e3267f7ca::0b67b905-8181-4dbd-bedc-f9d4a9220786
+      - e304fe38-28d5-4c80-5a4b-f8ce018ac496::da0531eb-f9a1-47a7-b10b-19dc89781719
     body:
       encoding: UTF-8
       string: '{"name":"vcap","build":"2222","support":"http://support.cloudfoundry.com","version":2,"description":"Cloud
         Foundry sponsored by Pivotal","authorization_endpoint":"https://login.crystal.pepsi.cf-app.com","token_endpoint":"https://uaa.crystal.pepsi.cf-app.com","api_version":"2.13.0","logging_endpoint":"wss://loggregator.crystal.pepsi.cf-app.com:443"}'
     http_version: 
-  recorded_at: Sat, 13 Dec 2014 17:02:31 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Mon, 15 Dec 2014 16:45:05 GMT
+recorded_with: VCR 2.8.0
