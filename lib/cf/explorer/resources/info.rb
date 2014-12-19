@@ -5,6 +5,7 @@ module CF
         include Virtus.model
 
         attribute :status, Integer
+        attribute :name, String
       end
     end
   end

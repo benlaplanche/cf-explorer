@@ -10,5 +10,8 @@ describe "Info resource" do
       expect(@my_client.info.status).to eq(200)
     end
 
+    it "should have a name" do
+      expect(@my_client.info.name).to_not be_nil
+    end
   end
 end
