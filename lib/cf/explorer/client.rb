@@ -11,8 +11,8 @@ module CF
         @options							= options.fetch(:options)
         @skip_ssl_validation 	= options.fetch(:options).fetch(:skip_ssl_validation)
         connection_options    = options.fetch(:connection_options, { ssl: {verify: false} })
-        #TODO: strip the leading http/https properly
-        @host                 = @api_url[8..-1]
+
+        @host                 = @api_url.gsub(/(https:\/\/|http)/,'')
         @access_token ||= token
 
         @connection = Faraday.new({url: api_url}.merge(connection_options)) do |faraday|
@@ -25,9 +25,6 @@ module CF
       def token
         token_issuer = CF::UAA::TokenIssuer.new(uaa_url, "cf", "", options)
         token = token_issuer.implicit_grant_with_creds(username: user, password: password)
-
-        token_info = CF::UAA::TokenCoder.decode(token.info["access_token"], nil, nil, false)
-        token_info["testing123"] = SecureRandom.hex
 
         token.info["access_token"]
       end
