@@ -7,7 +7,7 @@ describe "Cloud Foundry Explorer" do
 		expect(CF::Explorer::VERSION).to eq('0.0.1')
 	end
 
-	context "creating a client" do
+	context "creating a client with valid connection options" do
 
 		it "should return the correct values" do
 			expect(@my_client.uaa_url).to 							eq(ENV['CF_UAA'])
@@ -22,6 +22,15 @@ describe "Cloud Foundry Explorer" do
 		it "should return a token" do
 			expect(@my_client.access_token).to_not be(nil)
 		end
+	end
+
+	context "creating a client without valid connection options" do
+		# let(:invalid_client) { CF::Explorer::Client.new() }
+
+		it "should return an error" do
+			expect { CF::Explorer::Client.new()} .to raise_error(CF::Explorer::ClientOptionsError)
+		end
+
 	end
 
 end

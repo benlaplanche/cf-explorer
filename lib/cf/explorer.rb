@@ -10,6 +10,7 @@ module CF
 		require "cf/explorer/client"
     require "cf/explorer/endpoints/info"
     require "cf/explorer/resources/info"
+    require "cf/explorer/error"
   end
 end
 

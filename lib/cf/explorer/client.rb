@@ -4,13 +4,23 @@ module CF
       attr_reader :user, :password, :api_url, :uaa_url, :skip_ssl_validation, :options, :host, :access_token
 
       def initialize(options={})
-        @user 								= options.fetch(:user, "admin")
-        @password 						= options.fetch(:password)
-        @uaa_url 							= options.fetch(:uaa_url)
-        @api_url 							= options.fetch(:api_url)
+
+        begin
+          @user 								= options.fetch(:user, "admin")
+          @password 						= options.fetch(:password)
+          @uaa_url 							= options.fetch(:uaa_url)
+          @api_url 							= options.fetch(:api_url)
+        rescue
+          raise ClientOptionsError
+        end
+
         @options							= options.fetch(:options)
         @skip_ssl_validation 	= options.fetch(:options).fetch(:skip_ssl_validation)
         connection_options    = options.fetch(:connection_options, { ssl: {verify: false} })
+
+        if (@user || @password || @uaa_url || @api_url).nil?
+          raise ClientOptionsError
+        end
 
         @host                 = @api_url.gsub(/(https:\/\/|http)/,'')
         @access_token ||= token
