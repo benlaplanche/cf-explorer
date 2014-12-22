@@ -13,15 +13,15 @@ describe "Info resource" do
     end
 
     it "should have a build number" do
-      expect(@my_client.info.build).to_not be_nil
+      expect(@my_client.info.build).to be_an(Integer)
     end
 
     it "should have a support URL" do
-
+      expect(@my_client.info.support).to be_a_valid_url
     end
 
     it "should have a version" do
-
+      expect(@my_client.info.version).to be_an(Integer)
     end
 
     it "should have a description" do
@@ -29,19 +29,19 @@ describe "Info resource" do
     end
 
     it "should have an authorization endpoint" do
-      expect(@my_client.info.authorization_endpoint).to_be valid_url
+      expect(@my_client.info.authorization_endpoint).to be_a_valid_url
     end
 
     it "should have a token endpoint" do
-      expect(@my_client.info.token_endpoint).to_be valid_url
+      expect(@my_client.info.token_endpoint).to be_a_valid_url
     end
 
     it "should have an api version" do
-
+      expect(@my_client.info.api_version).to match(/\d/)
     end
 
     it "should have a logging endpoint" do
-      expect(@my_client.info.logging_endpoint).to_be valid_url
+      expect(@my_client.info.logging_endpoint).to be_a_valid_url
     end
 
   end

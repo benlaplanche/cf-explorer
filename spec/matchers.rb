@@ -1,6 +1,6 @@
 require 'rspec/expectations'
 
-RSpec::Matchers.define :valid_url do
+RSpec::Matchers.define :be_a_valid_url do
   match do |url|
     URI.parse(url) rescue false
   end
