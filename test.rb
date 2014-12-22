@@ -1,4 +1,8 @@
-require_relative 'lib/cf/explorer'
+$LOAD_PATH << File.expand_path( File.dirname(__FILE__) + '/lib' )
+
+require 'pry'
+require 'cf/explorer'
+
 @my_client = CF::Explorer::Client.new(
     uaa_url: 	ENV["CF_UAA"],
     api_url: 	ENV["CF_API"],

@@ -3,6 +3,7 @@ require 'cf/explorer'
 require 'vcr'
 require 'webmock/rspec'
 require './spec/shared_things'
+require './spec/matchers'
 
 VCR.configure do |c|
   c.cassette_library_dir  = "spec/cassettes"

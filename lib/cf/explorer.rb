@@ -3,6 +3,7 @@ require "uaa"
 require "uri"
 require "faraday"
 require "virtus"
+require "json"
 
 module CF
   module Explorer

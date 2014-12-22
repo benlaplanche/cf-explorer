@@ -29,7 +29,7 @@ module CF
         token_info = CF::UAA::TokenCoder.decode(token.info["access_token"], nil, nil, false)
         token_info["testing123"] = SecureRandom.hex
 
-        return token.info["access_token"]
+        token.info["access_token"]
       end
 
       def get(path, options={})
@@ -37,7 +37,7 @@ module CF
           req.headers['Cookie'] = ''
           req.headers['Host'] = @host
 
-          if options.fetch(:auth)
+          if options.fetch(:auth, true)
             req.headers['Authorization'] = "bearer #{@access_token}"
           end
 

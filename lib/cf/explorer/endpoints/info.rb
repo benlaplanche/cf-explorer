@@ -10,22 +10,21 @@ module CF
 
         def get
           data = client.get('/info', auth: false)
-          body = data.body
-          puts parse_to_hash(body)
-          # CF::Explorer::Resources::Info.new( {status: data.status}.merge(data.body))
-          CF::Explorer::Resources::Info.new(data)
+          CF::Explorer::Resources::Info.new( {status: data.status}.merge(JSON.parse(data.body)))
         end
 
         def parse_to_hash(string)
-          binding.pry
           h = Hash.new
-          a = string.gsub(/[\\"{}]/,"")
+          a = string.gsub(/[\\{}]/,"")
           b = a.split(',')
           b.each do |x|
             a,b = x.split(/":/)
+            a.gsub!(/"/,'')
+            b.gsub!(/"/,'')
             h[a] = b
           end
-          return h
+
+          h
         end
       end
     end

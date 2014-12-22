@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Cloud Foundry Explorer" do
 	include_context "shared client connection"
-	# require_relative "resources/info"
+
 	it "should have the correct version" do
 		expect(CF::Explorer::VERSION).to eq('0.0.1')
 	end
