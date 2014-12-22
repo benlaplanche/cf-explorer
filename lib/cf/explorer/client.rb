@@ -6,7 +6,7 @@ module CF
       def initialize(options={})
 
         begin
-          @user 								= options.fetch(:user, "admin")
+          @user 								= options.fetch(:user)
           @password 						= options.fetch(:password)
           @uaa_url 							= options.fetch(:uaa_url)
           @api_url 							= options.fetch(:api_url)
@@ -18,12 +18,17 @@ module CF
         @skip_ssl_validation 	= options.fetch(:options).fetch(:skip_ssl_validation)
         connection_options    = options.fetch(:connection_options, { ssl: {verify: false} })
 
-        if (@user || @password || @uaa_url || @api_url).nil?
+        if @user.nil? || @password.nil? || @uaa_url.nil? || @api_url.nil?
           raise ClientOptionsError
         end
 
         @host                 = @api_url.gsub(/(https:\/\/|http)/,'')
-        @access_token ||= token
+
+        begin
+          @access_token ||= token
+        rescue
+          raise ClientTokenError
+        end
 
         @connection = Faraday.new({url: api_url}.merge(connection_options)) do |faraday|
           faraday.request   :url_encoded

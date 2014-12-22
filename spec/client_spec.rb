@@ -25,12 +25,26 @@ describe "Cloud Foundry Explorer" do
 	end
 
 	context "creating a client without valid connection options" do
-		# let(:invalid_client) { CF::Explorer::Client.new() }
 
 		it "should return an error" do
-			expect { CF::Explorer::Client.new()} .to raise_error(CF::Explorer::ClientOptionsError)
+			expect { CF::Explorer::Client.new }.to raise_error(CF::Explorer::ClientOptionsError)
 		end
 
+	end
+
+	context "creating a client and unable to generate a token" do
+
+		it "should return an error" do
+			expect { CF::Explorer::Client.new(
+					uaa_url: 	"https://uaa.example.com",
+					api_url: 	ENV["CF_API"],
+					user: 		ENV["CF_USER"],
+					password: ENV["CF_PASSWORD"],
+					options: {
+							skip_ssl_validation: true
+					})
+			}.to raise_error(CF::Explorer::ClientTokenError)
+		end
 	end
 
 end
