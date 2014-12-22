@@ -43,7 +43,7 @@ module CF
       end
 
       def info
-        CF::Explorer::Endpoints::Info.new(self).get
+        info ||= CF::Explorer::Endpoints::Info.new(self).get
       end
     end
   end
