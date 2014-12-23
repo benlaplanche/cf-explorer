@@ -62,7 +62,7 @@ module CF
       end
 
       def apps
-        return 200
+        apps ||= CF::Explorer::Endpoints::Apps.new(self).get
       end
     end
   end

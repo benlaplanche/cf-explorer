@@ -10,8 +10,11 @@ module CF
 
         def get
           data = client.get('/apps', auth: true)
+          puts data.inspect
+          binding.pry
+          puts "**************"
           payload = { status: data.status }.merge(JSON.parse(data.body))
-
+          puts payload.inspect
           CF::Explorer::Resources::App.new(payload)
         end
 
