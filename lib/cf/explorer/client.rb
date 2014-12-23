@@ -32,7 +32,7 @@ module CF
 
         @connection = Faraday.new({url: api_url}.merge(connection_options)) do |faraday|
           faraday.request   :url_encoded
-          faraday.response  :logger
+          # faraday.response  :logger
           faraday.adapter   Faraday.default_adapter
         end
       end
@@ -59,6 +59,10 @@ module CF
 
       def info
         info ||= CF::Explorer::Endpoints::Info.new(self).get
+      end
+
+      def apps
+        return 200
       end
     end
   end
