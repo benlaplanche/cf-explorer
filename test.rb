@@ -13,3 +13,5 @@ require 'cf/explorer'
     })
 
 @my_client.info
+binding.pry
+@my_client.apps

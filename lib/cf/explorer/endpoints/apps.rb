@@ -10,12 +10,40 @@ module CF
 
         def get
           data = client.get('/apps', auth: true)
-          puts data.inspect
-          binding.pry
-          puts "**************"
-          payload = { status: data.status }.merge(JSON.parse(data.body))
-          puts payload.inspect
-          CF::Explorer::Resources::App.new(payload)
+
+          body = { status: data.status }.merge(JSON.parse(data.body))
+
+          resources = body["resources"]
+          body.delete("resources")
+          # binding.pry
+
+          resources.map do |key|
+            output = flat_hash(key)
+            # puts body.merge(output)
+            CF::Explorer::Resources::App.new(body.merge(output))
+            # puts a.inspect
+          end
+          # resources = flat_hash(resources)
+          # payload = body.merge(resources)
+          # puts payload
+          #
+          # CF::Explorer::Resources::App.new(payload)
+        end
+
+        def flat_hash(hash,parent='',output={})
+
+          hash.each do |key, value|
+            # binding.pry
+            if value.is_a? Hash
+              flat_hash(value,key,output)
+            else
+              key = parent + '_' + key unless parent.nil?
+              output[key] = value
+            end
+
+          end
+
+          output
         end
 
       end
