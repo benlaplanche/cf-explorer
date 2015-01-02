@@ -17,6 +17,8 @@ module CF
 
           resources.map do |key|
             output = flat_hash(key)
+            output.merge!( { name: output["entity_name"] } )
+
             CF::Explorer::Resources::App.new(body.merge(output))
           end
         end
